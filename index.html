@@ -1,18 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eunag's Portfolio</title>
-  <meta name="description" content="path to becoming a front-end developer">
-  <meta name="author" content="Eunag">
-  <link rel="icon" type="image/png" href="imgs/favicon2.png">
+  <meta name="description" content="path to becoming a front-end developer" />
+  <meta name="author" content="Eunag" />
+  <link rel="icon" type="image/png" href="imgs/favicon2.png" />
   <script src="https://kit.fontawesome.com/6c341df0c8.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -21,7 +19,7 @@
   <!-- Navbar -->
   <nav id="navbar">
     <div class="navbar__logo">
-      <img class="navbar__logo__image"src="imgs/favicon2.png" alt="My Image" width="20" height="20">
+      <img class="navbar__logo__image" src="imgs/favicon2.png" alt="My Image" width="20" height="20">
       <!-- <i class="fa-solid fa-paw"></i> -->
       <a class="navbar__logo__name" href="#">Euang</a>
     </div>
@@ -47,7 +45,7 @@
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="section">
     <h1>About me</h1>
     <p>エリさんが何か書いてみてって言ってるから書いていますが。。正直、僕は経歴を持ってないから何を書くのがいいのか悩んでます。
       まぁ。これでまずOKとしましょうか</p>
@@ -57,43 +55,43 @@
           <i class="fa-brands fa-html5"></i>
         </div>
         <div class="major__title">Html</div>
-        <div class="major__description">HTML, CSS, JavaScript, React</div>
+        <p class="major__description">HTML, CSS, JavaScript, React</p>
       </div>
-    </div>
-    <div class="about__majors">
       <div class="major">
         <div class="major__icon">
           <i class="fa-brands fa-css3-alt"></i>
         </div>
         <div class="major__title">CSS</div>
-        <div class="major__description">HTML, CSS, JavaScript, React</div>
+        <p class="major__description">HTML, CSS, JavaScript, React</p>
       </div>
-    </div>
-    <div class="about__majors">
       <div class="major">
         <div class="major__icon">
           <i class="fa-brands fa-js"></i>
         </div>
         <div class="major__title">JavaScript</div>
-        <div class="major__description">HTML, CSS, JavaScript, React</div>
+        <p class="major__description">HTML, CSS, JavaScript, React</p>
       </div>
     </div>
     <div class="about__jobs">
       <div class="job">
         <img src="imgs/jobs/apple.png" alt="apple" class="job__logo" width="30" height="20">
-        <p class="job__name">ㅋㅋ</p>
-        <p class="job__period">2023 Jan - now</p>
+        <div class="job__description">
+          <p class="job__name">Currently working at Apple as Software Engineer</p>
+          <p class="job__period">2023 Jan - now</p>
+        </div>
       </div>
       <div class="job">
         <img src="imgs/jobs/apple.png" alt="apple" class="job__logo" width="30" height="20">
-        <p class="job__name">ㅋㅋ</p>
-        <p class="job__period">2023 Jan - now</p>
+        <div class="job__description">
+          <p class="job__name">Currently working at Apple as Software Engineer</p>
+          <p class="job__period">2023 Jan - now</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Skill -->
-  <section id="skill">
+  <section id="skill" class="section">
     <h1>Skills</h1>
     <h2>Skill & Attributes</h2>
     <p>Experince with all phases of the software life-cycle. Passion for learning technologies. Capable of working
@@ -148,7 +146,7 @@
   </section>
 
   <!-- Work -->
-  <section id="work">
+  <section id="work" class="section">
     <h1>My work</h1>
     <h3>Projects</h3>
     <div class="work__categories">
@@ -225,7 +223,7 @@
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section id="testimonials" class="section">
     <h1>Testimonials</h1>
     <h3>See what they sya about me</h3>
     <div class="testimonials">
@@ -249,7 +247,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="section">
     <h1 class="contact__title"></h1>
     <h2 class="contact__email"></h2>
     <div class="contact__links">
