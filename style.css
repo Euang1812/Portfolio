@@ -426,11 +426,16 @@ p {
 }
 
 .testimonial__speech-bubble > p{
+  margin-top: 10px;
   color: var(--color-light-grey);
 }
 
 .testimonial__speech-bubble a{
   color: var(--color-pink);
+}
+
+.testimonial__speech-bubble p:nth-child(even){
+  margin-top: 10px;
 }
 
 /* Contact */
