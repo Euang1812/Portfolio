@@ -181,6 +181,10 @@ p {
   color: var(--color-white);
 }
 
+.home__contact:hover{
+  background-color:  var(--color-dark-pink);
+}
+
 /* Section common */
 .section{
   padding: 50px;
@@ -508,8 +512,36 @@ p {
     flex-grow: 1;
   }
   .testimonials__avatar{
-    margin-top: 10px;
     width: 100px;
     height: 100px;
   }
+}
+
+@media screen and (max-width:580px){
+
+  .testimonial{
+    display: inline-block;
+  }
+  
+  .testimonials__avatar{
+    margin-top: 0px;
+    margin: auto;
+  }
+  
+  .testimonial__speech-bubble{
+    min-width: 255px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .testimonials__avatar:nth-child(odd){
+    margin: auto;
+  }
+  
+  .testimonials__avatar:nth-child(even){
+    margin: auto;
+  }
+
+  .testimonials__avatar{
+    width: 85px;
+    height: 85px;
 }
