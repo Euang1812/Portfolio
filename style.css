@@ -154,7 +154,7 @@ p {
 }
 
 #home{
-  background: url(/imgs/bg.png) center/cover no-repeat;
+  background: url(imgs/bg.png) center/cover no-repeat;
   padding: 40px;
   text-align: center;
 }
