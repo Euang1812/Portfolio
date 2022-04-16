@@ -7,6 +7,7 @@
   --color-pink: #FE918D;
   --color-dark-pink: #FF6863;
   --color-black: #4D4D4D;
+  --color-grey: #676767;
   --color-dark-grey: #4D4D4D;
   --color-light-grey: #7C7979;
   --color-blue: #73AACE;
@@ -172,6 +173,10 @@ p {
 .section{
   padding: 50px;
   text-align: center;
+  margin: auto;
+}
+
+.section__container{
   max-width: 1200px;
   margin: auto;
 }
@@ -233,4 +238,58 @@ p {
 
 .job__period{
   font-size: var(--font-micro);
+}
+
+#skill{
+  background-color: var(--color-yellow);
+}
+
+.skill{
+  margin-bottom: 32px;
+}
+
+.skillset{
+  display: flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-light-white);
+  margin: 20px 0;
+  padding: px 0;
+}
+.skillset__title{
+  color: white;
+}
+.skillset__left{
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding: 30px 40px;
+}
+
+.skill__description{
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar{
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+  margin-bottom: 15px;
+}
+
+.skill__value{
+  height: 3px;
+  background-color: var(--color-orange);  
+}
+
+.skillset__right{
+  flex-basis: 40%;
+}
+
+.tools{
+  background-color: var(--color-grey);
+}
+
+.tools,
+.etc{
+  padding: 20px;
 }
