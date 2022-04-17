@@ -114,6 +114,7 @@ p {
   /* background-color: var(--color-pink); */
   background-color: transparent;
   transition: all var(--animation-fast-duration) ease-in-out;
+  z-index: 1;
 }
 
 #navbar.navbar--dark{
