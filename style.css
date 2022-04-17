@@ -175,6 +175,11 @@ p {
   text-align: center;
 }
 
+#home.home--dark{
+  background-color: transparent;
+  transition: all var(--animation-fast-duration) ease-in-out;
+}
+
 .home__avatar{
   width: 250px;
   height: 250px; 

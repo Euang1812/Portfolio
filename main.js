@@ -20,20 +20,33 @@ navbarMenu.addEventListener('click', (e) => {
   if (link == null) {
     return;
   }
-
   scrollIntoView(link);
 });
 
 
 //handle click on "contact me" button on home
+const about = document.querySelector("#about");
+const aboutHeight = about.getBoundingClientRect().height;
 const contactBtn = document.querySelector('.home__contact');
 
 contactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
 })
 
+//Make home slowly fade to transparent as the window scrolls down
+
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll',()=>{
+  home.style.opacity = (1- window.scrollY / homeHeight);
+})
+
+
+
+
+
 //scroll function
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' }); Î
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
