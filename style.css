@@ -342,6 +342,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  text-align: center;
 }
 .category__btn.active,
 .category__btn:hover{
@@ -373,6 +374,13 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--animation-duration) ease-out;
+}
+
+.work__projects.anime-out{
+  opacity: 0;
+  transform: scale(0.99) translateY(40px);
 }
 
 .project{
@@ -384,6 +392,10 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisble{
+  display: none;
 }
 
 .project__img{
