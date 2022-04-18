@@ -70,6 +70,15 @@ workBtnContainer.addEventListener('click',(e)=>{
   if(filter == null){
     return;
   }
+
+  //Remove selection form the previous item and  select the new one
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+
+  const target = e.target.nodeName ==='BUTTON'? e.target : e.target.parentNode;
+  // console.log(e.target.nodeName); nodeName은 무엇인지 확인차.!
+  target.classList.add('selected');
+
   projectContainer.classList.add('anime-out');
 
   setTimeout(()=>{
