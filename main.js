@@ -5,6 +5,7 @@ const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 const navbarName = document.querySelector('.navbar__logo__name');
 document.addEventListener('scroll', () => {
+  console.log(window.scrollY);
   if (window.scrollY > (navbarHeight - 20)) {
     navbar.classList.add('navbar--dark');
     navbarMenu.classList.add('navbar--dark');
@@ -115,5 +116,3 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
-
-
