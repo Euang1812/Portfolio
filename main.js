@@ -5,7 +5,6 @@ const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 const navbarName = document.querySelector('.navbar__logo__name');
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
   if (window.scrollY > (navbarHeight - 20)) {
     navbar.classList.add('navbar--dark');
     navbarMenu.classList.add('navbar--dark');
@@ -24,6 +23,7 @@ document.addEventListener('scroll', () => {
 
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (e) => {
+  const target =e.target
   const link = e.target.dataset.link;
   if (link == null) {
     return;
@@ -31,6 +31,7 @@ navbarMenu.addEventListener('click', (e) => {
 
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
+  selectNavItem(target)
 });
 
 
@@ -111,8 +112,74 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 200);
 })
 
+
+
+//1. 모든 섹션 요소들을 가지고온다
+
+//2. IntersectionObserver 를 이용해서 모드 섹션들을 관찰하낟
+
+//3. 보여지는 섹션에 해당하는 메뉴 아이탬을 활성화 시킨다.
+
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skill',
+  '#work',
+  '#testimonials',
+  '#contact',
+];
+
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+
+let selectedNavIndex;
+let selectedNavItem = navItems[0];
+
+function selectNavItem(selected) {
+  selectedNavItem.classList.remove('active');
+  selectedNavItem = selected
+  selectedNavItem.classList.add('active');
+}
+
 //scroll function
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3,
+}
+
+const callback = (entries, observer) => {
+
+  entries.forEach(entry => {
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else {
+        selectedNavIndex = index - 1;
+      }
+      // selectNavItem(navItems[selectedNavIndex]);
+    }
+  });
+}
+
+const observer = new IntersectionObserver(callback, observerOptions);
+
+sections.forEach(section => observer.observe(section));
+
+window.addEventListener('wheel', () => {
+  // console.log(window.scrollY+window.innerHeight);
+  // console.log(document.body.clientHeight);
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if ((Math.round(window.scrollY) + window.innerHeight) === document.body.clientHeight) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+});
